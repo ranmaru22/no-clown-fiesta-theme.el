@@ -296,7 +296,7 @@
 
   ;; Corfu
   (corfu-current     (:inherit 'highlight))
-  (corfu-bar         (:background alt-bg))
+  (corfu-bar         (:background medium-gray))
   (corfu-border      (:background medium-gray))
   (corfu-default     (:background alt-bg))
   (corfu-annotations (:foreground medium-gray))
