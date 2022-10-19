@@ -338,15 +338,47 @@
   (dired-ignored   (:foreground gray-blue :inherit 'unspecified))
   (dired-header    (:foreground light-gray :weight 'bold :underline t))
 
+  ;; diredfl
+  (diredfl-compressed-file-name   (:foreground gray-blue))
+  (diredfl-compressed-file-suffix (:foreground gray-blue))
+  (diredfl-date-time              (:foreground orange))
+  (diredfl-deletion               (:strike-through t))
+  (diredfl-deletion-file-name     (:foreground red :strike-through t))
+  (diredfl-dir-heading            (:inherit 'bold :foreground yellow :underline t))
+  (diredfl-dir-name               (:foreground cyan))
+  (diredfl-dir-priv               (:foreground cyan))
+  (diredfl-exec-priv              (:foreground green))
+  (diredfl-executable-tag         (:foreground green))
+  (diredfl-file-name              (:foreground white))
+  (diredfl-file-suffix            (:foreground white))
+  (diredfl-flag-mark              (:background gray-blue))
+  (diredfl-flag-mark-line         (:background gray-blue))
+  (diredfl-ignored-file-name      (:foreground gray))
+  (diredfl-link-priv              (:foreground magenta))
+  (diredfl-no-priv                (:foreground gray))
+  (diredfl-number                 (:foreground red))
+  (diredfl-other-priv             (:foreground white))
+  (diredfl-rare-priv              (:foreground purple))
+  (diredfl-read-priv              (:foreground yellow))
+  (diredfl-symlink                (:foreground magenta))
+  (diredfl-tagged-autofile-name   (:foreground white))
+  (diredfl-write-priv             (:foreground red))
+
   ;; Treemacs
-  (treemacs-directory-face (:foreground cyan))
+  (treemacs-directory-face       (:foreground white))
+  (treemacs-root-face            (:inherit 'bold :foreground yellow :underline t))
+  (treemacs-git-added-face       (:foreground green))
+  (treemacs-git-commit-diff-face (:foreground blue))
+  (treemacs-git-conflict-face    (:foreground orange))
+  (treemacs-git-ignored-face     (:foreground gray))
+  (treemacs-git-modified-face    (:foreground blue))
+  (treemacs-marked-file-face     (:inherit 'highlight))
 
   ;; ERC
   (erc-notice-face    (:foreground purple))
   (erc-timestamp-face (:foreground green))
   (erc-input-face     (:foreground yellow))
-  (erc-my-nick-face   (:foreground yellow))
-  )
+  (erc-my-nick-face   (:foreground yellow)))
 
  (custom-theme-set-variables
   'no-clown-fiesta

@@ -42,6 +42,7 @@ So far, the following modes are directly supported:
 - corfu
 - counsel
 - dired
+- diredfl
 - erc
 - highlight-numbers
 - isearch
