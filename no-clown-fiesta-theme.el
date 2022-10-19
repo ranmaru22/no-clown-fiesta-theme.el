@@ -46,7 +46,7 @@
  no-clown-fiesta
  "Color theme for Emacs 24+ that does not look like a clown puked up the source code."
 
- ((((class color) (min-colors #xFFFFFF)))
+ ((((class color) (min-colors #xFFFFFF))) ;; GUI only for now
 
   ;; Color palette
   (fg                 "#E1E1E1")
@@ -346,7 +346,13 @@
   (erc-timestamp-face (:foreground green))
   (erc-input-face     (:foreground yellow))
   (erc-my-nick-face   (:foreground yellow))
-  ))
+  )
+
+ (custom-theme-set-variables
+  'no-clown-fiesta
+  `(pos-tip-foreground-color ,fg)
+  `(pos-tip-background-color ,alt-bg)
+  `(ansi-color-names-vector [,gray ,red ,green ,gray-blue ,orange ,purple ,cyan ,white])))
 
 (provide-theme 'no-clown-fiesta)
 
