@@ -2,19 +2,22 @@
 
 [[https://img.shields.io/badge/License-GPL%20v3-green.svg]] [[https://img.shields.io/badge/Emacs-24%2B-d24b83.svg]]
 
-An attempt at a color scheme that does not look like a clown puked up the source code.
+An attempt at a color scheme that does not look like a clown puked up the source
+code.
 
 Based on the [[https://github.com/aktersnurra/no-clown-fiesta.nvim][original Neovim theme]] by [[https://github.com/aktersnurra][aktersnurra]]. Converted for Emacs and
 extended by Alex Sun (ranmaru22).
 
-[[https://user-images.githubusercontent.com/16521734/196559798-76a9a45c-3b47-48a7-87e4-e9e80ee58db0.png]]
+[[https://user-images.githubusercontent.com/16521734/197047486-41ab8745-33ab-49df-b062-91ab5663f430.png]]
 
-If you like subtle themes but do want /a little/ color in your life, this is for you.
+If you like subtle themes but do want /a little/ color in your life, this is for
+you.
+
 
 ** Installation
 The theme isn't on MELPA yet, so you have to use the old fashioned way for
 now. Clone the repo, copy (or symlink) the ~no-clown-fiesta-theme.el~ into your
-~load-path~, and ~(load-theme 'no-clown-fiesta t)~.
+load-path~, and ~(load-theme 'no-clown-fiesta t)~.
 
 Or you can use ~straight.el~.
 
@@ -58,7 +61,7 @@ So far, the following modes are directly supported:
 - treemacs*
 - vertico
 
-  /* work in progress/
+/* work in progress/
 
-  Because of tree-sitter, most prog-modes that support it should work nicely out
-  of the box.
+Because of tree-sitter, most prog-modes that support it should work nicely out
+of the box.
