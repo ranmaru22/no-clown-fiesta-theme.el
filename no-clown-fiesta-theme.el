@@ -195,7 +195,7 @@
   (tree-sitter-hl-face:function.call         (:foreground cyan))
   (tree-sitter-hl-face:function.macro        (:foreground cyan))
   (tree-sitter-hl-face:function.special      (:foreground cyan))
-  (tree-sitter-hl-face:keyword               (:foreground gray-blue))
+  (tree-sitter-hl-face:keyword               (:foreground gray-blue :weight 'bold))
   (tree-sitter-hl-face:label                 (:foreground white))
   (tree-sitter-hl-face:method                (:foreground cyan))
   (tree-sitter-hl-face:method.call           (:foreground cyan))
