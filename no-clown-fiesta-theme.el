@@ -1,31 +1,14 @@
-;;; no-clown-fiesta-theme.el --- Color theme for Emacs 24+. -*- lexical-binding: t -*-
+;;; no-clown-fiesta-theme.el --- Not-so-colorful-theme -*- lexical-binding: t -*-
 
-;; Permission is hereby granted, free of charge, to any person
-;; obtaining a copy of this software and associated documentation
-;; files (the "Software"), to deal in the Software without
-;; restriction, including without limitation the rights to use, copy,
-;; modify, merge, publish, distribute, sublicense, and/or sell copies
-;; of the Software, and to permit persons to whom the Software is
-;; furnished to do so, subject to the following conditions:
-
-;; The above copyright notice and this permission notice shall be
-;; included in all copies or substantial portions of the Software.
-
-;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-;; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-;; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-;; NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-;; BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-;; ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-;; SOFTWARE.
-
-;; Package-Requires: ((autothemer "0.2"))
+;; URL: https://github.com/ranmaru22/no-clown-fiesta-theme.el
+;; Author: Alex Sun (ranmaru22)
+;; Package-Version: 1.0
+;; Package-Requires: ((emacs "24.1") (autothemer "0.2"))
 
 ;;; Commentary:
 ;; Color theme for Emacs 24+ that does not look like a unicorn farted on your
 ;; screen.  Based on no-clown-fiesta.nvim by aktersnurra, converted and extended
-;; for Emacs by Alex Sun (ranmaru22).
+;; for Emacs by ranmaru22.
 
 ;; Original nvim theme: https://github.com/aktersnurra/no-clown-fiesta.nvim
 
@@ -110,9 +93,9 @@
   (trailing-whitespace      (:foreground nil :background error-red))
   (tooltip                  (:background alt-bg :foreground fg))
 
-  (error                    (:inherit 'bold :foreground error-red))
-  (warning                  (:inherit 'bold :foreground warning-orange))
-  (success                  (:inherit 'bold :foreground success-green))
+  (error                    (:foreground error-red :weight 'bold))
+  (warning                  (:foreground warning-orange :weight 'bold))
+  (success                  (:foreground success-green :weight 'bold))
 
   ;; Term colors
   (term-color-black   (:foreground gray :background medium-gray))
@@ -180,7 +163,7 @@
   (highlight-numbers-number (:foreground red))
 
   ;; HL Todo
-  (hl-todo (:inherit 'bold :foreground yellow))
+  (hl-todo (:foreground yellow :weight 'bold))
 
   ;; Tree Sitter
   (tree-sitter-hl-face:attribute             (:foreground white))
@@ -195,7 +178,7 @@
   (tree-sitter-hl-face:function.call         (:foreground cyan))
   (tree-sitter-hl-face:function.macro        (:foreground cyan))
   (tree-sitter-hl-face:function.special      (:foreground cyan))
-  (tree-sitter-hl-face:keyword               (:foreground gray-blue))
+  (tree-sitter-hl-face:keyword               (:foreground gray-blue :weight 'bold))
   (tree-sitter-hl-face:label                 (:foreground white))
   (tree-sitter-hl-face:method                (:foreground cyan))
   (tree-sitter-hl-face:method.call           (:foreground cyan))
@@ -262,7 +245,7 @@
 
   ;; isearch (and lazy-highlight)
   (lazy-highlight  (:background nil :foreground orange))
-  (isearch         (:inherit 'bold :background nil :foreground orange))
+  (isearch         (:background nil :foreground orange :weight 'bold))
   (isearch-group-1 (:foreground fg :background magenta))
   (isearch-group-2 (:foreground fg :background purple))
   (isearch-fail    (:background error-red :foreground fg))
@@ -273,26 +256,26 @@
   (anzu-match-3            (:foreground purple))
   (anzu-mode-line          (:foreground orange))
   (anzu-mode-line-no-match (:foreground red))
-  (anzu-replace-highlight  (:inherit 'bold :foreground orange))
+  (anzu-replace-highlight  (:foreground orange :weight 'bold))
   (anzu-replace-to         (:foreground yellow))
 
   ;; Vertico
   (vertico-current     (:inherit 'highlight))
-  (vertico-group-title (:inherit 'bold :foreground medium-gray))
+  (vertico-group-title (:foreground medium-gray :weight 'bold))
 
   ;; Consult
   (consult-line-number-prefix  (:inherit 'line-number))
-  (consult-line-number-wrapped (:inherit 'line-number :foreground gray-blue))
+  (consult-line-number-wrapped (:foreground gray-blue))
 
   ;; Marginalia
   (marginalia-documentation (:foreground medium-gray))
   (marginalia-file-name     (:foreground medium-gray))
 
   ;; Orderless
-  (orderless-match-face-0 (:inherit 'bold :foreground orange))
-  (orderless-match-face-1 (:inherit 'bold :foreground blue))
-  (orderless-match-face-2 (:inherit 'bold :foreground magenta))
-  (orderless-match-face-3 (:inherit 'bold :foreground light-green))
+  (orderless-match-face-0 (:foreground orange :weight 'bold))
+  (orderless-match-face-1 (:foreground blue :weight 'bold))
+  (orderless-match-face-2 (:foreground magenta :weight 'bold))
+  (orderless-match-face-3 (:foreground light-green :weight 'bold))
 
   ;; Corfu
   (corfu-current     (:inherit 'highlight))
@@ -314,28 +297,28 @@
   (company-preview-common               (:background nil :foreground green))
 
   ;; org-mode
-  (org-default          (:inherit 'variable-pitch :foreground fg))
+  (org-default          (:foreground fg))
   (org-block            (:inherit 'fixed-pitch))
-  (org-level-1          (:inherit 'variable-pitch :foreground medium-gray-blue :weight 'bold))
-  (org-level-2          (:inherit 'variable-pitch :foreground gray-blue :weight 'bold))
-  (org-level-3          (:inherit 'variable-pitch :foreground cyan :weight 'bold))
-  (org-level-4          (:inherit 'variable-pitch :foreground green :weight 'bold))
-  (org-level-5          (:inherit 'variable-pitch :foreground medium-gray-blue :weight 'bold))
-  (org-level-6          (:inherit 'variable-pitch :foreground gray-blue :weight 'bold))
-  (org-level-7          (:inherit 'variable-pitch :foreground cyan :weight 'bold))
-  (org-level-8          (:inherit 'variable-pitch :foreground green :weight 'bold))
-  (org-quote            (:inherit 'variable-pitch :foreground gray-blue))
-  (org-code             (:inherit 'fixed-pitch-serif :foreground green))
-  (org-verbatim         (:inherit 'fixed-pitch-serif :foreground blue))
-  (org-inline-src-block (:inherit 'fixed-pitch :foreground green))
-  (org-todo             (:inherit 'fixed-pitch-serif :foreground red))
-  (org-done             (:inherit 'fixed-pitch-serif :foreground success-green))
+  (org-level-1          (:foreground medium-gray-blue :weight 'bold))
+  (org-level-2          (:foreground gray-blue :weight 'bold))
+  (org-level-3          (:foreground cyan :weight 'bold))
+  (org-level-4          (:foreground green :weight 'bold))
+  (org-level-5          (:foreground medium-gray-blue :weight 'bold))
+  (org-level-6          (:foreground gray-blue :weight 'bold))
+  (org-level-7          (:foreground cyan :weight 'bold))
+  (org-level-8          (:foreground green :weight 'bold))
+  (org-quote            (:foreground gray-blue))
+  (org-code             (:foreground green))
+  (org-verbatim         (:foreground blue))
+  (org-inline-src-block (:foreground green))
+  (org-todo             (:foreground red))
+  (org-done             (:foreground success-green))
   (org-column           (:background nil))
   (org-column-title     (:background nil :weight 'bold :underline t))
 
   ;; Dired
   (dired-directory (:foreground blue :weight 'bold))
-  (dired-ignored   (:foreground gray-blue :inherit 'unspecified))
+  (dired-ignored   (:foreground gray-blue))
   (dired-header    (:foreground light-gray :weight 'bold :underline t))
 
   ;; diredfl
@@ -344,7 +327,7 @@
   (diredfl-date-time              (:foreground medium-gray-blue))
   (diredfl-deletion               (:strike-through t))
   (diredfl-deletion-file-name     (:foreground red :strike-through t))
-  (diredfl-dir-heading            (:inherit 'bold :foreground yellow :underline t))
+  (diredfl-dir-heading            (:foreground yellow :weight 'bold :underline t))
   (diredfl-dir-name               (:foreground cyan))
   (diredfl-dir-priv               (:foreground cyan))
   (diredfl-exec-priv              (:foreground green))
@@ -366,7 +349,7 @@
 
   ;; Treemacs
   (treemacs-directory-face       (:foreground white))
-  (treemacs-root-face            (:inherit 'bold :foreground yellow :underline t))
+  (treemacs-root-face            (:foreground yellow :weight 'bold :underline t))
   (treemacs-git-added-face       (:foreground green))
   (treemacs-git-commit-diff-face (:foreground blue))
   (treemacs-git-conflict-face    (:foreground red))
