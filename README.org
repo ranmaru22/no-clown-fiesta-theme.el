@@ -30,7 +30,6 @@ Or you can use ~straight.el~.
     (load-theme 'no-clown-fiesta t))
 #+end_src
 
-As soon as the theme is in a state I am happy with, I will put it on MELPA too.
 
 ** Supported modes
 This theme lacks support for many modes because I basically only added support
@@ -52,16 +51,14 @@ So far, the following modes are directly supported:
 - git-gutter
 - magit
 - orderless
-- org-mode*
+- org-mode
 - rainbow-delimiters
 - show-paren
 - tab-bar
 - term / vterm / ansi-colors
 - tree-sitter
-- treemacs*
+- treemacs
 - vertico
-
-/* work in progress/
 
 Because of tree-sitter, most prog-modes that support it should work nicely out
 of the box.
