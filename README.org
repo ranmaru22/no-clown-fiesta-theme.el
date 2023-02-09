@@ -17,7 +17,7 @@ you.
 ** Installation
 The theme isn't on MELPA yet, so you have to use the old fashioned way for
 now. Clone the repo, copy (or symlink) the ~no-clown-fiesta-theme.el~ into your
-load-path~, and ~(load-theme 'no-clown-fiesta t)~.
+~load-path~, and ~(load-theme 'no-clown-fiesta t)~.
 
 Or you can use ~straight.el~.
 
@@ -26,6 +26,18 @@ Or you can use ~straight.el~.
     :straight
     '(no-clown-fiesta-theme :type git :host github
                             :repo "ranmaru22/no-clown-fiesta-theme.el")
+    :config
+    (load-theme 'no-clown-fiesta t))
+#+end_src
+
+With Emacs 29, you can also use the new ~package-vc-install~. Make sure to have
+~autothemer~ installed as well (=M-x package-install RET autothemer RET=).
+
+#+begin_src elisp
+  (use-package no-clown-fiesta-theme
+    :init
+    (unless (package-installed-p 'no-clown-fiesta-theme)
+      (package-vc-install "https://github.com/ranmaru22/no-clown-fiesta-theme.el"))
     :config
     (load-theme 'no-clown-fiesta t))
 #+end_src
@@ -46,6 +58,7 @@ So far, the following modes are directly supported:
 - dired
 - diredfl
 - erc
+- flymake
 - highlight-numbers
 - isearch
 - git-gutter
@@ -56,7 +69,7 @@ So far, the following modes are directly supported:
 - show-paren
 - tab-bar
 - term / vterm / ansi-colors
-- tree-sitter
+- tree-sitter (builtin + package)
 - treemacs
 - vertico
 

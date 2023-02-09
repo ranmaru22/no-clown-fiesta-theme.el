@@ -136,14 +136,14 @@
 
   ;; Tab-bar
   (tab-bar                    (:foreground medium-gray :background dark-gray))
-  (tab-bar-tab                (:foreground fg :weight 'bold :underline t))
-  (tab-bar-tab-group-current  (:foreground fg))
+  (tab-bar-tab                (:foreground fg))
+  (tab-bar-tab-group-current  (:foreground fg :weight 'bold :underline t))
   (tab-bar-tab-inactive       (:foreground medium-gray))
   (tab-bar-tab-ungrouped      (:foreground medium-gray))
   (tab-bar-tab-group-inactive (:foreground medium-gray))
 
   ;; Font lock
-  (font-lock-builtin-face           (:foreground white))
+  (font-lock-builtin-face           (:foreground cyan))
   (font-lock-comment-face           (:foreground medium-gray))
   (font-lock-comment-delimiter-face (:foreground medium-gray))
   (font-lock-constant-face          (:foreground white))
@@ -155,7 +155,7 @@
   (font-lock-preprocessor-face      (:foreground medium-gray-blue))
   (font-lock-reference-face         (:foreground white))
   (font-lock-string-face            (:foreground medium-gray-blue))
-  (font-lock-type-face              (:foreground white))
+  (font-lock-type-face              (:foreground white :weight 'bold))
   (font-lock-variable-name-face     (:foreground white))
   (font-lock-warning-face           (:foreground warning-orange))
 
@@ -320,6 +320,14 @@
   (dired-directory (:foreground blue :weight 'bold))
   (dired-ignored   (:foreground gray-blue))
   (dired-header    (:foreground light-gray :weight 'bold :underline t))
+
+  ;; Flymake
+  (flymake-error   (:underline (:style 'wave :color error-red)))
+  (flymake-warning (:underline (:style 'wave :color warning-orange)))
+  (flymake-note    (:underline (:style 'wave :color hint-blue)))
+
+  ;; Compilation
+  (compilation-info (:foreground hint-blue))
 
   ;; diredfl
   (diredfl-compressed-file-name   (:foreground gray-blue))
