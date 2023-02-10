@@ -8,7 +8,7 @@ code.
 Based on the [[https://github.com/aktersnurra/no-clown-fiesta.nvim][original Neovim theme]] by [[https://github.com/aktersnurra][aktersnurra]]. Converted for Emacs and
 extended by ranmaru22.
 
-[[https://user-images.githubusercontent.com/16521734/197047486-41ab8745-33ab-49df-b062-91ab5663f430.png]]
+[[https://user-images.githubusercontent.com/16521734/218135253-0a903886-af0c-45dd-bafe-f61b2b56ac25.png]]
 
 If you like subtle themes but do want /a little/ color in your life, this is for
 you.
