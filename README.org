@@ -6,7 +6,7 @@ An attempt at a color scheme that does not look like a clown puked up the source
 code.
 
 Based on the [[https://github.com/aktersnurra/no-clown-fiesta.nvim][original Neovim theme]] by [[https://github.com/aktersnurra][aktersnurra]]. Converted for Emacs and
-extended by Alex Sun (ranmaru22).
+extended by ranmaru22.
 
 [[https://user-images.githubusercontent.com/16521734/197047486-41ab8745-33ab-49df-b062-91ab5663f430.png]]
 
@@ -17,7 +17,7 @@ you.
 ** Installation
 The theme isn't on MELPA yet, so you have to use the old fashioned way for
 now. Clone the repo, copy (or symlink) the ~no-clown-fiesta-theme.el~ into your
-load-path~, and ~(load-theme 'no-clown-fiesta t)~.
+~load-path~, and ~(load-theme 'no-clown-fiesta t)~.
 
 Or you can use ~straight.el~.
 
@@ -30,7 +30,18 @@ Or you can use ~straight.el~.
     (load-theme 'no-clown-fiesta t))
 #+end_src
 
-As soon as the theme is in a state I am happy with, I will put it on MELPA too.
+With Emacs 29, you can also use the new ~package-vc-install~. Make sure to have
+~autothemer~ installed as well (=M-x package-install RET autothemer RET=).
+
+#+begin_src elisp
+  (use-package no-clown-fiesta-theme
+    :init
+    (unless (package-installed-p 'no-clown-fiesta-theme)
+      (package-vc-install "https://github.com/ranmaru22/no-clown-fiesta-theme.el"))
+    :config
+    (load-theme 'no-clown-fiesta t))
+#+end_src
+
 
 ** Supported modes
 This theme lacks support for many modes because I basically only added support
@@ -47,21 +58,20 @@ So far, the following modes are directly supported:
 - dired
 - diredfl
 - erc
+- flymake
 - highlight-numbers
 - isearch
 - git-gutter
 - magit
 - orderless
-- org-mode*
+- org-mode
 - rainbow-delimiters
 - show-paren
 - tab-bar
 - term / vterm / ansi-colors
-- tree-sitter
-- treemacs*
+- tree-sitter (builtin + package)
+- treemacs
 - vertico
-
-/* work in progress/
 
 Because of tree-sitter, most prog-modes that support it should work nicely out
 of the box.
