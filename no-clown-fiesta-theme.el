@@ -131,11 +131,11 @@
   (rainbow-delimiters-unmatched-face  (:foreground red))
 
   ;; Mode-line
-  (mode-line          (:foreground fg :background dark-gray))
-  (mode-line-inactive (:foreground medium-gray :background alt-bg))
+  (mode-line          (:foreground fg :background dark-gray :box (:line-width 4 :color dark-gray)))
+  (mode-line-inactive (:foreground medium-gray :background alt-bg :box (:line-width 4 :color dark-gray)))
 
-  ;; Tab-bar
-  (tab-bar                    (:foreground medium-gray :background dark-gray))
+;; Tab-bar
+  (tab-bar                    (:foreground medium-gray :background dark-gray :box (:line-width 4 :color dark-gray)))
   (tab-bar-tab                (:foreground fg))
   (tab-bar-tab-group-current  (:foreground fg :weight 'bold :underline t))
   (tab-bar-tab-inactive       (:foreground medium-gray))
