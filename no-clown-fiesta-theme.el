@@ -118,7 +118,7 @@
   (show-paren-mismatch         (:background red :weight 'bold :underline t))
 
   ;; Rainbow delimiter
-  (rainbow-delimiters-base-error-face (:foreground red))
+  (rainbow-delimiters-base-error-face (:foreground error-red :weight 'bold))
   (rainbow-delimiters-base-face       (:foreground fg))
   (rainbow-delimiters-depth-1-face    (:foreground medium-gray-blue))
   (rainbow-delimiters-depth-2-face    (:foreground gray-blue))
@@ -129,8 +129,8 @@
   (rainbow-delimiters-depth-7-face    (:foreground cyan))
   (rainbow-delimiters-depth-8-face    (:foreground green))
   (rainbow-delimiters-depth-9-face    (:foreground medium-gray-blue))
-  (rainbow-delimiters-mismatched-face (:foreground red))
-  (rainbow-delimiters-unmatched-face  (:foreground red))
+  (rainbow-delimiters-mismatched-face (:foreground error-red :weight 'bold))
+  (rainbow-delimiters-unmatched-face  (:foreground error-red :weight 'bold))
 
   ;; Mode-line
   (mode-line          (:foreground fg :background dark-gray :box (:line-width 4 :color dark-gray)))
@@ -163,7 +163,6 @@
   (font-lock-warning-face           (:foreground warning-orange))
 
   ;; Highlight number
-  ;; For older systems where font-lock-number face is not available.
   (highlight-numbers-number (:foreground red))
 
   ;; HL Todo
