@@ -34,6 +34,7 @@
   ;; Color palette
   (fg                 "#E1E1E1")
   (bg                 "#151515")
+  (bg-darker          "#101010")
   (alt-bg             "#202020")
   (accent             "#242424")
   (white              "#E1E1E1")
@@ -92,6 +93,7 @@
   (secondary-selection      (:background medium-gray :foreground nil))
   (trailing-whitespace      (:foreground nil :background error-red))
   (tooltip                  (:background alt-bg :foreground fg))
+  (child-frame-border       (:background dark-gray))
 
   (error                    (:foreground error-red :weight 'bold))
   (warning                  (:foreground warning-orange :weight 'bold))
@@ -156,10 +158,12 @@
   (font-lock-reference-face         (:foreground white))
   (font-lock-string-face            (:foreground medium-gray-blue))
   (font-lock-type-face              (:foreground white :weight 'bold))
+  (font-lock-number-face            (:foreground red))
   (font-lock-variable-name-face     (:foreground white))
   (font-lock-warning-face           (:foreground warning-orange))
 
-  ;; Highlight numbers
+  ;; Highlight number
+  ;; For older systems where font-lock-number face is not available.
   (highlight-numbers-number (:foreground red))
 
   ;; HL Todo
