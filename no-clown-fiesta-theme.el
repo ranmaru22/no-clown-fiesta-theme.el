@@ -25,6 +25,11 @@
                   (file-name-as-directory
                    (file-name-directory load-file-name))))
 
+;;;###autoload
+(defun no-clown-fiesta-theme-treemacs ()
+  "Enable the treemacs theme for `no-clown-fiesta-theme'."
+  (require 'no-clown-fiesta-treemacs))
+
 (autothemer-deftheme
  no-clown-fiesta
  "Color theme for Emacs 24+ that does not look like a clown puked up the source code."
@@ -34,6 +39,7 @@
   ;; Color palette
   (fg                 "#E1E1E1")
   (bg                 "#151515")
+  (bg-darker          "#101010")
   (alt-bg             "#202020")
   (accent             "#242424")
   (white              "#E1E1E1")
@@ -92,6 +98,7 @@
   (secondary-selection      (:background medium-gray :foreground nil))
   (trailing-whitespace      (:foreground nil :background error-red))
   (tooltip                  (:background alt-bg :foreground fg))
+  (child-frame-border       (:background dark-gray))
 
   (error                    (:foreground error-red :weight 'bold))
   (warning                  (:foreground warning-orange :weight 'bold))
@@ -116,7 +123,7 @@
   (show-paren-mismatch         (:background red :weight 'bold :underline t))
 
   ;; Rainbow delimiter
-  (rainbow-delimiters-base-error-face (:foreground red))
+  (rainbow-delimiters-base-error-face (:foreground error-red :weight 'bold))
   (rainbow-delimiters-base-face       (:foreground fg))
   (rainbow-delimiters-depth-1-face    (:foreground medium-gray-blue))
   (rainbow-delimiters-depth-2-face    (:foreground gray-blue))
@@ -127,23 +134,23 @@
   (rainbow-delimiters-depth-7-face    (:foreground cyan))
   (rainbow-delimiters-depth-8-face    (:foreground green))
   (rainbow-delimiters-depth-9-face    (:foreground medium-gray-blue))
-  (rainbow-delimiters-mismatched-face (:foreground red))
-  (rainbow-delimiters-unmatched-face  (:foreground red))
+  (rainbow-delimiters-mismatched-face (:foreground error-red :weight 'bold))
+  (rainbow-delimiters-unmatched-face  (:foreground error-red :weight 'bold))
 
   ;; Mode-line
-  (mode-line          (:foreground fg :background dark-gray))
-  (mode-line-inactive (:foreground medium-gray :background alt-bg))
+  (mode-line          (:foreground fg :background dark-gray :box (:line-width 4 :color dark-gray)))
+  (mode-line-inactive (:foreground medium-gray :background alt-bg :box (:line-width 4 :color alt-bg)))
 
-  ;; Tab-bar
-  (tab-bar                    (:foreground medium-gray :background dark-gray))
-  (tab-bar-tab                (:foreground fg :weight 'bold :underline t))
-  (tab-bar-tab-group-current  (:foreground fg))
+;; Tab-bar
+  (tab-bar                    (:foreground medium-gray :background dark-gray :box (:line-width 4 :color dark-gray)))
+  (tab-bar-tab                (:foreground fg))
+  (tab-bar-tab-group-current  (:foreground fg :weight 'bold :underline t))
   (tab-bar-tab-inactive       (:foreground medium-gray))
   (tab-bar-tab-ungrouped      (:foreground medium-gray))
   (tab-bar-tab-group-inactive (:foreground medium-gray))
 
   ;; Font lock
-  (font-lock-builtin-face           (:foreground white))
+  (font-lock-builtin-face           (:foreground cyan))
   (font-lock-comment-face           (:foreground medium-gray))
   (font-lock-comment-delimiter-face (:foreground medium-gray))
   (font-lock-constant-face          (:foreground white))
@@ -155,11 +162,12 @@
   (font-lock-preprocessor-face      (:foreground medium-gray-blue))
   (font-lock-reference-face         (:foreground white))
   (font-lock-string-face            (:foreground medium-gray-blue))
-  (font-lock-type-face              (:foreground white))
+  (font-lock-type-face              (:foreground white :weight 'bold))
+  (font-lock-number-face            (:foreground red))
   (font-lock-variable-name-face     (:foreground white))
   (font-lock-warning-face           (:foreground warning-orange))
 
-  ;; Highlight numbers
+  ;; Highlight number
   (highlight-numbers-number (:foreground red))
 
   ;; HL Todo
@@ -320,6 +328,14 @@
   (dired-directory (:foreground blue :weight 'bold))
   (dired-ignored   (:foreground gray-blue))
   (dired-header    (:foreground light-gray :weight 'bold :underline t))
+
+  ;; Flymake
+  (flymake-error   (:underline (:style 'wave :color error-red)))
+  (flymake-warning (:underline (:style 'wave :color warning-orange)))
+  (flymake-note    (:underline (:style 'wave :color hint-blue)))
+
+  ;; Compilation
+  (compilation-info (:foreground hint-blue))
 
   ;; diredfl
   (diredfl-compressed-file-name   (:foreground gray-blue))
