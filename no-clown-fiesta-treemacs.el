@@ -4,7 +4,7 @@
 ;;; Code:
 (defun no-clown-fiesta-treemacs--line-space-hook ()
   "Set `line-spacing' for treemacs buffer."
-  (setq line-spacing 1.0))
+  (setq line-spacing 1))
 
 (with-eval-after-load 'treemacs
   (add-hook 'treemacs-mode-hook #'no-clown-fiesta-treemacs--line-space-hook)
