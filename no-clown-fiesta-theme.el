@@ -25,6 +25,11 @@
                   (file-name-as-directory
                    (file-name-directory load-file-name))))
 
+;;;###autoload
+(defun no-clown-fiesta-theme-treemacs ()
+  "Enable the treemacs theme for `no-clown-fiesta-theme'."
+  (require 'no-clown-fiesta-treemacs))
+
 (autothemer-deftheme
  no-clown-fiesta
  "Color theme for Emacs 24+ that does not look like a clown puked up the source code."
@@ -134,7 +139,7 @@
 
   ;; Mode-line
   (mode-line          (:foreground fg :background dark-gray :box (:line-width 4 :color dark-gray)))
-  (mode-line-inactive (:foreground medium-gray :background alt-bg :box (:line-width 4 :color dark-gray)))
+  (mode-line-inactive (:foreground medium-gray :background alt-bg :box (:line-width 4 :color alt-bg)))
 
 ;; Tab-bar
   (tab-bar                    (:foreground medium-gray :background dark-gray :box (:line-width 4 :color dark-gray)))
