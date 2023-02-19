@@ -352,6 +352,17 @@
   (flymake-warning (:underline (:style 'wave :color warning-orange)))
   (flymake-note    (:underline (:style 'wave :color hint-blue)))
 
+  ;; Flycheck
+  (flycheck-error              (:underline (:style 'wave :color error-red)))
+  (flycheck-warning            (:underline (:style 'wave :color warning-orange)))
+  (flycheck-info               (:underline (:style 'wave :color hint-blue)))
+  (flycheck-fringe-error       (:inherit 'error))
+  (flycheck-fringe-warning     (:inherit 'warning))
+  (flycheck-fringe-info        (:foreground hint-blue :weight 'bold))
+  (flycheck-error-list-error   (:inherit 'error))
+  (flycheck-error-list-warning (:inherit 'warning))
+  (flycheck-error-list-info    (:foreground hint-blue :weight 'bold))
+
   ;; Compilation
   (compilation-info (:foreground hint-blue))
 
