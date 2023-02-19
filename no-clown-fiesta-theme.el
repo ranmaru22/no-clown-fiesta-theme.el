@@ -114,6 +114,24 @@
   (term-color-cyan    (:foreground cyan :background sign-change))
   (term-color-white   (:foreground white :background true-white))
 
+  ;; ANSI colors
+  (ansi-color-black          (:foreground gray :background gray))
+  (ansi-color-red            (:foreground red :background red))
+  (ansi-color-green          (:foreground green :background green))
+  (ansi-color-blue           (:foreground gray-blue :background gray-blue))
+  (ansi-color-yellow         (:foreground orange :background orange))
+  (ansi-color-magenta        (:foreground purple :background purple))
+  (ansi-color-cyan           (:foreground cyan :background cyan))
+  (ansi-color-gray           (:foreground white :background white))
+  (ansi-color-bright-black   (:foreground medium-gray :background medium-gray))
+  (ansi-color-bright-red     (:foreground error-red :background error-red))
+  (ansi-color-bright-green   (:foreground light-green :background light-green))
+  (ansi-color-bright-blue    (:foreground blue :background blue))
+  (ansi-color-bright-yellow  (:foreground yellow :background yellow))
+  (ansi-color-bright-magenta (:foreground magenta :background magenta))
+  (ansi-color-bright-cyan    (:foreground sign-change :background sign-change))
+  (ansi-color-bright-gray    (:foreground true-white :background true-white))
+
   ;; Pulse
   (pulse-highlight-start-face (:background medium-gray :extend t))
 
@@ -383,7 +401,8 @@
   'no-clown-fiesta
   `(pos-tip-foreground-color ,fg)
   `(pos-tip-background-color ,alt-bg)
-  `(ansi-color-names-vector [,gray ,red ,green ,gray-blue ,orange ,purple ,cyan ,white])))
+  `(ansi-color-names-vector [,gray ,red ,green ,gray-blue
+                             ,orange ,purple ,cyan ,white])))
 
 (provide-theme 'no-clown-fiesta)
 
