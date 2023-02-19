@@ -1,5 +1,23 @@
-;;; no-clown-fiesta-treemacs.el --- treemacs theme that goes along with no-clown-fiesta-theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; no-clown-fiesta-treemacs.el --- Treemacs theme that goes along with no-clown-fiesta-theme -*- lexical-binding: t; no-byte-compile: t; -*-
+
+;; Copyright (c) 2022-2023 ranmaru22
+;;
+;; This program is free software: you can redistribute it and/or modify it under
+;; the terms of the GNU General Public License as published by the Free Software
+;; Foundation, either version 3 of the License, or any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but WITHOUT
+;; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+;; FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+;; details.
+;;
+;; You should have received a copy of the GNU General Public License along with
+;; this program. If not, see http://www.gnu.org/licenses/.
+
 ;;; Commentary:
+;; You can enable the treemacs theme by calling the function
+;; `no-clown-fiesta-theme-treemacs' after loading the theme. Requires
+;; `all-the-icons' to display the file and folder icons.
 
 ;;; Code:
 (defun no-clown-fiesta-treemacs--line-space-hook ()
@@ -7,6 +25,9 @@
   (setq line-spacing 1.0))
 
 (with-eval-after-load 'treemacs
+  (unless (require 'all-the-icons nil t)
+    (error "The treemacs theme requires the all-the-icons package"))
+
   (add-hook 'treemacs-mode-hook #'no-clown-fiesta-treemacs--line-space-hook)
 
   (treemacs-create-theme "no-clown-fiesta"
@@ -99,8 +120,7 @@
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-octicon "key" :v-adjust 0.0))
        :extensions ("key" "pem" "p12" "crt" "pub" "gpg" "srl" "csr")
-       :fallback 'same-as-icon)
-      ))
+       :fallback 'same-as-icon)))
 
   (treemacs-load-theme "no-clown-fiesta"))
 
