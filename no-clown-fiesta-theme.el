@@ -1,22 +1,33 @@
 ;;; no-clown-fiesta-theme.el --- Not-so-colorful-theme -*- lexical-binding: t -*-
 
 ;; URL: https://github.com/ranmaru22/no-clown-fiesta-theme.el
-;; Author: Alex Sun (ranmaru22)
-;; Package-Version: 1.0
-;; Package-Requires: ((emacs "24.1") (autothemer "0.2"))
+;; Author: ranmaru22
+;; Package-Version: 1.1
+;; Package-Requires: ((emacs "26.1") (autothemer "0.2"))
+
+;; Copyright (c) 2022-2023 ranmaru22
+;;
+;; This program is free software: you can redistribute it and/or modify it under
+;; the terms of the GNU General Public License as published by the Free Software
+;; Foundation, either version 3 of the License, or any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but WITHOUT
+;; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+;; FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+;; details.
+;;
+;; You should have received a copy of the GNU General Public License along with
+;; this program. If not, see http://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; Color theme for Emacs 24+ that does not look like a unicorn farted on your
-;; screen.  Based on no-clown-fiesta.nvim by aktersnurra, converted and extended
+;; Color theme for Emacs 26+ that does not look like a unicorn farted on your
+;; screen. Based on no-clown-fiesta.nvim by aktersnurra, converted and extended
 ;; for Emacs by ranmaru22.
-
+;;
 ;; Original nvim theme: https://github.com/aktersnurra/no-clown-fiesta.nvim
 
 ;;; Code:
 (require 'autothemer)
-
-(unless (>= emacs-major-version 24)
-  (error "Requires Emacs 24 or later"))
 
 ;;;###autoload
 (and load-file-name
@@ -32,7 +43,7 @@
 
 (autothemer-deftheme
  no-clown-fiesta
- "Color theme for Emacs 24+ that does not look like a clown puked up the source code."
+ "Color theme for Emacs 26+ that does not look like a clown puked up the source code."
 
  ((((class color) (min-colors #xFFFFFF))) ;; GUI only for now
 
@@ -114,6 +125,24 @@
   (term-color-cyan    (:foreground cyan :background sign-change))
   (term-color-white   (:foreground white :background true-white))
 
+  ;; ANSI colors
+  (ansi-color-black          (:foreground gray :background gray))
+  (ansi-color-red            (:foreground red :background red))
+  (ansi-color-green          (:foreground green :background green))
+  (ansi-color-blue           (:foreground gray-blue :background gray-blue))
+  (ansi-color-yellow         (:foreground orange :background orange))
+  (ansi-color-magenta        (:foreground purple :background purple))
+  (ansi-color-cyan           (:foreground cyan :background cyan))
+  (ansi-color-gray           (:foreground white :background white))
+  (ansi-color-bright-black   (:foreground medium-gray :background medium-gray))
+  (ansi-color-bright-red     (:foreground error-red :background error-red))
+  (ansi-color-bright-green   (:foreground light-green :background light-green))
+  (ansi-color-bright-blue    (:foreground blue :background blue))
+  (ansi-color-bright-yellow  (:foreground yellow :background yellow))
+  (ansi-color-bright-magenta (:foreground magenta :background magenta))
+  (ansi-color-bright-cyan    (:foreground sign-change :background sign-change))
+  (ansi-color-bright-gray    (:foreground true-white :background true-white))
+
   ;; Pulse
   (pulse-highlight-start-face (:background medium-gray :extend t))
 
@@ -138,11 +167,17 @@
   (rainbow-delimiters-unmatched-face  (:foreground error-red :weight 'bold))
 
   ;; Mode-line
-  (mode-line          (:foreground fg :background dark-gray :box (:line-width 4 :color dark-gray)))
-  (mode-line-inactive (:foreground medium-gray :background alt-bg :box (:line-width 4 :color alt-bg)))
+  (mode-line          (:foreground fg
+                       :background dark-gray
+                       :box (:line-width 4 :color dark-gray)))
+  (mode-line-inactive (:foreground medium-gray
+                       :background alt-bg
+                       :box (:line-width 4 :color alt-bg)))
 
 ;; Tab-bar
-  (tab-bar                    (:foreground medium-gray :background dark-gray :box (:line-width 4 :color dark-gray)))
+  (tab-bar                    (:foreground medium-gray
+                               :background dark-gray
+                               :box (:line-width 4 :color dark-gray)))
   (tab-bar-tab                (:foreground fg))
   (tab-bar-tab-group-current  (:foreground fg :weight 'bold :underline t))
   (tab-bar-tab-inactive       (:foreground medium-gray))
@@ -334,6 +369,17 @@
   (flymake-warning (:underline (:style 'wave :color warning-orange)))
   (flymake-note    (:underline (:style 'wave :color hint-blue)))
 
+  ;; Flycheck
+  (flycheck-error              (:underline (:style 'wave :color error-red)))
+  (flycheck-warning            (:underline (:style 'wave :color warning-orange)))
+  (flycheck-info               (:underline (:style 'wave :color hint-blue)))
+  (flycheck-fringe-error       (:inherit 'error))
+  (flycheck-fringe-warning     (:inherit 'warning))
+  (flycheck-fringe-info        (:foreground hint-blue :weight 'bold))
+  (flycheck-error-list-error   (:inherit 'error))
+  (flycheck-error-list-warning (:inherit 'warning))
+  (flycheck-error-list-info    (:foreground hint-blue :weight 'bold))
+
   ;; Compilation
   (compilation-info (:foreground hint-blue))
 
@@ -343,7 +389,9 @@
   (diredfl-date-time              (:foreground medium-gray-blue))
   (diredfl-deletion               (:strike-through t))
   (diredfl-deletion-file-name     (:foreground red :strike-through t))
-  (diredfl-dir-heading            (:foreground yellow :weight 'bold :underline t))
+  (diredfl-dir-heading            (:foreground yellow
+                                   :weight 'bold
+                                   :underline t))
   (diredfl-dir-name               (:foreground cyan))
   (diredfl-dir-priv               (:foreground cyan))
   (diredfl-exec-priv              (:foreground green))
@@ -365,7 +413,9 @@
 
   ;; Treemacs
   (treemacs-directory-face       (:foreground white))
-  (treemacs-root-face            (:foreground yellow :weight 'bold :underline t))
+  (treemacs-root-face            (:foreground yellow
+                                  :weight 'bold
+                                  :underline t))
   (treemacs-git-added-face       (:foreground green))
   (treemacs-git-commit-diff-face (:foreground blue))
   (treemacs-git-conflict-face    (:foreground red))
@@ -383,7 +433,8 @@
   'no-clown-fiesta
   `(pos-tip-foreground-color ,fg)
   `(pos-tip-background-color ,alt-bg)
-  `(ansi-color-names-vector [,gray ,red ,green ,gray-blue ,orange ,purple ,cyan ,white])))
+  `(ansi-color-names-vector [,gray ,red ,green ,gray-blue
+                             ,orange ,purple ,cyan ,white])))
 
 (provide-theme 'no-clown-fiesta)
 
