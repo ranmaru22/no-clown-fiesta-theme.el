@@ -97,17 +97,17 @@
   (line-number              (:foreground gray))
   (line-number-current-line (:background dark-gray :foreground light-gray))
   (default                  (:foreground fg :background bg))
-  (fringe                   (:background nil :foreground light-gray))
-  (vertical-border          (:background nil :foreground dark-gray))
+  (fringe                   (:background 'unspecified :foreground light-gray))
+  (vertical-border          (:background 'unspecified :foreground dark-gray))
   (link                     (:foreground hint-blue :underline t))
   (link-visited             (:foreground pale-purple :underline t))
   (match                    (:background accent))
   (highlight                (:background dark-gray-blue))
   (shadow                   (:foreground gray))
   (minibuffer-prompt        (:foreground pale-purple))
-  (region                   (:background gray :foreground nil))
-  (secondary-selection      (:background medium-gray :foreground nil))
-  (trailing-whitespace      (:foreground nil :background error-red))
+  (region                   (:background gray :foreground 'unspecified))
+  (secondary-selection      (:background medium-gray :foreground 'unspecified))
+  (trailing-whitespace      (:foreground 'unspecified :background error-red))
   (tooltip                  (:background alt-bg :foreground fg))
   (child-frame-border       (:background dark-gray))
 
@@ -287,8 +287,8 @@
   (git-gutter:modified    (:foreground sign-change))
 
   ;; isearch (and lazy-highlight)
-  (lazy-highlight  (:background nil :foreground orange))
-  (isearch         (:background nil :foreground orange :weight 'bold))
+  (lazy-highlight  (:background 'unspecified :foreground orange))
+  (isearch         (:background 'unspecified :foreground orange :weight 'bold))
   (isearch-group-1 (:foreground fg :background magenta))
   (isearch-group-2 (:foreground fg :background purple))
   (isearch-fail    (:background error-red :foreground fg))
@@ -336,8 +336,10 @@
   (company-tooltip-selection            (:background dark-gray))
   (company-scrollbar-fg                 (:background alt-bg))
   (company-scrollbar-bg                 (:background medium-gray))
-  (company-preview                      (:background nil :foreground green))
-  (company-preview-common               (:background nil :foreground green))
+  (company-preview                      (:background 'unspecified
+                                         :foreground green))
+  (company-preview-common               (:background 'unspecified
+                                         :foreground green))
 
   ;; org-mode
   (org-default          (:foreground fg))
@@ -356,8 +358,8 @@
   (org-inline-src-block (:foreground green))
   (org-todo             (:foreground red))
   (org-done             (:foreground success-green))
-  (org-column           (:background nil))
-  (org-column-title     (:background nil :weight 'bold :underline t))
+  (org-column           (:background 'unspecified))
+  (org-column-title     (:background 'unspecified :weight 'bold :underline t))
 
   ;; Dired
   (dired-directory (:foreground blue :weight 'bold))
