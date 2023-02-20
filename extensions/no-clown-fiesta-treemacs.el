@@ -1,4 +1,9 @@
-;;; no-clown-fiesta-ext-treemacs.el --- Treemacs theme that goes along with no-clown-fiesta-theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; no-clown-fiesta-treemacs.el --- Treemacs theme that goes along with no-clown-fiesta-theme -*- lexical-binding: t; no-byte-compile: t; -*-
+
+;; URL: https://github.com/ranmaru22/no-clown-fiesta-theme.el
+;; Author: ranmaru22
+;; Version: 1.1
+;; Package-Requires: ((emacs "26.1") (no-clown-fiesta "1.1") (treemacs "3.0") (all-the-icons "5.0"))
 
 ;; Copyright (c) 2022-2023 ranmaru22
 ;;
@@ -15,16 +20,19 @@
 ;; this program. If not, see http://www.gnu.org/licenses/.
 
 ;;; Commentary:
+;; This is an optinal extension to the no-clown-fiesta theme that themes
+;; treemacs in a minimal and pleasing way.
 
 ;;; Code:
-(defun no-clown-fiesta-theme--treemacs-line-space-hook ()
+(require 'treemacs)
+(require 'all-the-icons)
+
+(defun no-clown-fiesta-treemacs--line-space-hook ()
   "Set `line-spacing' for treemacs buffer."
   (setq line-spacing 1))
 
-(with-eval-after-load 'treemacs
-  (unless (require 'all-the-icons nil t)
-    (error "The all-the-icons package isn't installed"))
-
+(defun no-clown-fiesta-treemacs--enable-theme ()
+  "Create and enable the treemacs theme."
   (add-hook 'treemacs-mode-hook #'no-clown-fiesta-theme--treemacs-line-space-hook)
 
   (treemacs-create-theme "no-clown-fiesta"
@@ -32,99 +40,100 @@
     (progn
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "file" :height 0.85 :v-adjust 0.15))
-       :extensions '(fallback)
+       :extensions (fallback)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-octicon "repo" :v-adjust -0.2 :height 1.25 :face 'font-lock-variable-name-face))
-       :extensions '(root-closed root-open)
+       :extensions (root-closed root-open)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "folder-open" :height 1.0 :v-adjust 0.0))
-       :extensions '(dir-open)
+       :extensions (dir-open)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "folder" :height 1.0 :v-adjust 0.0))
-       :extensions '(dir-closed)
+       :extensions (dir-closed)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-material "close" :size 1.0 :face 'font-lock-keyword-face))
-       :extensions '(tag-open)
+       :extensions (tag-open)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format "%s " (all-the-icons-faicon "chevron-down" :size 0.9 :v-adjust 0.1 :face 'font-lock-keyword-face))
-       :extensions '(tag-closed)
+       :extensions (tag-closed)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format "%s " (all-the-icons-faicon "tag" :height 0.9 :face 'font-lock-type-face))
-       :extensions '(tag-leaf)
+       :extensions (tag-leaf)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-octicon "book"))
-       :extensions '(license)
+       :extensions (license)
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format "%s " (all-the-icons-material "error" :height 0.9 :face 'error))
-       :extensions '(error)
+       :extensions (error)
        :fallback (propertize "• " 'face 'error))
 
       (treemacs-create-icon
        :icon (format "%s " (all-the-icons-material "warning" :height 0.9 :face 'error))
-       :extensions '(warning)
+       :extensions (warning)
        :fallback (propertize "• " 'face 'warning))
 
       (treemacs-create-icon
        :icon (format  "%s " (all-the-icons-material "info" :height 0.9 :face 'font-lock-string-face))
-       :extensions '(info)
+       :extensions (info)
        :fallback (propertize "• " 'face 'compilation-info))
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "file-image-o" :v-adjust 0.05))
-       :extensions '("jpg" "jpeg" "png" "gif" "ico" "tif" "tiff" "svg" "bmp" "psd" "ai" "eps" "indd" "webp")
+       :extensions ("jpg" "jpeg" "png" "gif" "ico" "tif" "tiff" "svg" "bmp" "psd" "ai" "eps" "indd" "webp")
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "font" :v-adjust 0.05))
-       :extensions '("ttf" "otf" "woff2")
+       :extensions ("ttf" "otf" "woff2")
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "file-video-o" :height 0.95 :v-adjust 0.05))
-       :extensions '("mkv" "avi" "mov" "mp4" "webm")
+       :extensions ("mkv" "avi" "mov" "mp4" "webm")
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "file-audio-o" :v-adjust 0.05))
-       :extensions '("mp3" "flac" "opus" "au" "aac" "ogg" "wav" "m4a" "midi")
+       :extensions ("mp3" "flac" "opus" "au" "aac" "ogg" "wav" "m4a" "midi")
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-faicon "file-archive-o" :v-adjust 0.0))
-       :extensions '("zip" "xz" "tar" "gz" "7z" "rar")
+       :extensions ("zip" "xz" "tar" "gz" "7z" "rar")
        :fallback 'same-as-icon)
 
       (treemacs-create-icon
        :icon (format "  %s " (all-the-icons-faicon "git-square" :height 1.0 :v-adjust 0.0))
-       :extensions '("gitignore" "git" "gitattributes" "gitconfig" "gitmodules"))
+       :extensions ("gitignore" "git" "gitattributes" "gitconfig" "gitmodules"))
 
       (treemacs-create-icon
        :icon (format " %s " (all-the-icons-octicon "key" :v-adjust 0.0))
-       :extensions '("key" "pem" "p12" "crt" "pub" "gpg" "srl" "csr")
+       :extensions ("key" "pem" "p12" "crt" "pub" "gpg" "srl" "csr")
        :fallback 'same-as-icon)))
 
   (treemacs-load-theme "no-clown-fiesta"))
 
 ;;;###autoload
-(defun no-clown-fiesta-theme-treemacs-enable ()
-  "Enable the treemacs theme for `no-clown-fiesta-theme'.")
+(defun no-clown-fiesta-treemacs-enable ()
+  "Enable the treemacs theme for `no-clown-fiesta-theme'."
+  (no-clown-fiesta-theme-treemacs--enable-theme))
 
-(provide 'no-clown-fiesta-ext-treemacs)
+(provide 'no-clown-fiesta-treemacs)
 
-;;; no-clown-fiesta-ext-treemacs.el ends here
+;;; no-clown-fiesta-treemacs.el ends here
