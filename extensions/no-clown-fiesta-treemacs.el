@@ -134,6 +134,6 @@
   "Enable the treemacs theme for `no-clown-fiesta-theme'."
   (no-clown-fiesta-theme-treemacs--enable-theme))
 
-(provide 'no-clown-fiesta-treemacs)
+(provide 'no-clown-fiesta-ext-treemacs)
 
 ;;; no-clown-fiesta-treemacs.el ends here
