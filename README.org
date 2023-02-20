@@ -30,7 +30,7 @@ Or you can use ~straight.el~.
     :config
     (load-theme 'no-clown-fiesta t)
     ;; If you want the treemacs theme as well.
-    (no-clown-fiesta-theme-treemacs))
+    (no-clown-fiesta-theme-treemacs-enable))
   #+end_src
 
 With Emacs 29, you can also use the new ~package-vc-install~. Make sure to have
@@ -44,14 +44,14 @@ With Emacs 29, you can also use the new ~package-vc-install~. Make sure to have
     :config
     (load-theme 'no-clown-fiesta t)
     ;; If you want the treemacs theme as well.
-    (no-clown-fiesta-theme-treemacs))
+    (no-clown-fiesta-theme-treemacs-enable))
 #+end_src
 
 ** Treemacs
 A treemacs theme is included. It's heavily inspired by the ~doom-atom~ theme
 that's part of ~doomemacs/themes~ and is a very minimal monchrome icon theme. In
-order to load it, call ~no-clown-fiesta-theme-treemacs~ at any point after loading
-the original theme.
+order to load it, call ~no-clown-fiesta-theme-treemacs-enable~ at any point after
+loading the original theme.
 
 ** Supported modes
 This theme lacks support for many modes because I basically only added support
@@ -65,7 +65,7 @@ So far, the following modes are directly supported:
 - anzu
 - company
 - corfu
-- counsel
+- consult
 - dired
 - diredfl
 - erc
