@@ -41,6 +41,11 @@
   "Enable the treemacs theme for `no-clown-fiesta-theme'."
   (require 'no-clown-fiesta-treemacs))
 
+;;;###autoload
+(defun no-clown-fiesta-theme-treemacs-enable ()
+  "Enable the treemacs theme for `no-clown-fiesta-theme'."
+  (require no-clown-fiesta-ext-treemacs))
+
 (autothemer-deftheme
  no-clown-fiesta
  "Color theme for Emacs 26+ that does not look like a clown puked up the source code."
