@@ -28,9 +28,7 @@ Or you can use ~straight.el~.
     '(no-clown-fiesta-theme :type git :host github
                             :repo "ranmaru22/no-clown-fiesta-theme.el")
     :config
-    (load-theme 'no-clown-fiesta t)
-    ;; If you want the treemacs theme as well.
-    (no-clown-fiesta-theme-treemacs-enable))
+    (load-theme 'no-clown-fiesta t))
   #+end_src
 
 With Emacs 29, you can also use the new ~package-vc-install~. Make sure to have
@@ -42,16 +40,8 @@ With Emacs 29, you can also use the new ~package-vc-install~. Make sure to have
     (unless (package-installed-p 'no-clown-fiesta-theme)
       (package-vc-install "https://github.com/ranmaru22/no-clown-fiesta-theme.el"))
     :config
-    (load-theme 'no-clown-fiesta t)
-    ;; If you want the treemacs theme as well.
-    (no-clown-fiesta-theme-treemacs-enable))
+    (load-theme 'no-clown-fiesta t))
 #+end_src
-
-** Treemacs
-A treemacs theme is included. It's heavily inspired by the ~doom-atom~ theme
-that's part of ~doomemacs/themes~ and is a very minimal monchrome icon theme. In
-order to load it, call ~no-clown-fiesta-theme-treemacs-enable~ at any point after
-loading the original theme.
 
 ** Supported modes
 This theme lacks support for many modes because I basically only added support
