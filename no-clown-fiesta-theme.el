@@ -2,7 +2,7 @@
 
 ;; URL: https://github.com/ranmaru22/no-clown-fiesta-theme.el
 ;; Author: ranmaru22
-;; Package-Version: 1.1
+;; Version: 1.1
 ;; Package-Requires: ((emacs "26.1") (autothemer "0.2"))
 
 ;; Copyright (c) 2022-2023 ranmaru22
@@ -30,16 +30,12 @@
 (require 'autothemer)
 
 ;;;###autoload
-(and load-file-name
+(and (or load-file-name buffer-file-name)
      (boundp 'custom-theme-load-path)
      (add-to-list 'custom-theme-load-path
                   (file-name-as-directory
-                   (file-name-directory load-file-name))))
-
-;;;###autoload
-(defun no-clown-fiesta-theme-treemacs ()
-  "Enable the treemacs theme for `no-clown-fiesta-theme'."
-  (require 'no-clown-fiesta-treemacs))
+                   (file-name-directory
+                    (or load-file-name buffer-file-name)))))
 
 ;;;###autoload
 (defun no-clown-fiesta-theme-treemacs-enable ()
@@ -55,7 +51,7 @@
   ;; Color palette
   (fg                 "#E1E1E1")
   (bg                 "#151515")
-  (bg-darker          "#101010")
+  (_bg-darker         "#101010")
   (alt-bg             "#202020")
   (accent             "#242424")
   (white              "#E1E1E1")
@@ -76,7 +72,7 @@
   (orange             "#FFA557")
   (purple             "#AA749F")
   (pale-purple        "#b790d4")
-  (dark-purple        "#2a2a66")
+  (_dark-purple       "#2a2a66")
   (magenta            "#EFADF9")
   (cursor-bg          "#D0D0D0")
   (cursor-fg          "#151515")
@@ -85,12 +81,12 @@
   (sign-delete        "#AC4142")
   (error-red          "#AC4142")
   (warning-orange     "#F4BF75")
-  (info-yellow        "#F4BF75")
+  (_info-yellow       "#F4BF75")
   (success-green      "#77dd77")
   (hint-blue          "#A5D6FF")
-  (hint-green         "#90A959")
+  (_hint-green        "#90A959")
   (magit-light-green  "#4f5c32")
-  (magit-blue         "#33424f")
+  (_magit-blue        "#33424f")
   (magit-green        "#3f4928")
   (magit-light-red    "#4f2929")
   (magit-red          "#3f2121"))
