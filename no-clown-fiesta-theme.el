@@ -2,7 +2,7 @@
 
 ;; URL: https://github.com/ranmaru22/no-clown-fiesta-theme.el
 ;; Author: ranmaru22
-;; Version: 1.1
+;; Version: 1.2
 ;; Package-Requires: ((emacs "26.1") (autothemer "0.2"))
 
 ;; Copyright (c) 2022-2023 ranmaru22
@@ -178,7 +178,7 @@
   (tab-bar-tab-group-current  (:foreground fg :weight 'bold :underline t))
   (tab-bar-tab-inactive       (:foreground medium-gray))
   (tab-bar-tab-ungrouped      (:foreground medium-gray))
-  (tab-bar-tab-group-inactive (:foreground medium-gray))
+  (tab-bar-tab-group-inactive (:foreground medium-gray :underline t))
 
   ;; Font lock
   (font-lock-builtin-face           (:foreground cyan))
